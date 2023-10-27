@@ -22,9 +22,7 @@ export default function Home() {
       <NavBar/>
       <main>
 
-        <Hero/>
-        <Valeurs/>
-        <Rencontre/>
+        <Services/>
       </main>
     </>
   )
