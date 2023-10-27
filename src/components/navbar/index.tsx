@@ -19,7 +19,6 @@ import {
   Image,
 } from '@chakra-ui/react'
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons'
-import { useRouteError } from 'react-router-dom'
 import { useRouter } from 'next/router'
 
 interface Props {
