@@ -11,7 +11,38 @@ import {
   Icon,
   useColorModeValue,
   createIcon,
+  Image,
+  Divider,
+  Wrap,
+  WrapItem,
+  SimpleGrid,
+  StackDivider,
+  Flex
+
 } from '@chakra-ui/react'
+import { 
+    IoAnalyticsSharp,
+    IoLogoBitcoin,
+    IoSearchSharp
+ } from "react-icons/io5";
+import { ReactElement } from 'react';
+
+ interface FeatureProps {
+    text: string
+    iconBg: string
+    icon?: ReactElement
+  }
+
+const Feature = ({ text, icon, iconBg }: FeatureProps) => {
+    return (
+      <Stack direction={'row'} align={'center'}>
+        <Flex w={8} h={8} align={'center'} justify={'center'} rounded={'full'} bg={iconBg}>
+          {icon}
+        </Flex>
+        <Text fontWeight={600}>{text}</Text>
+      </Stack>
+    )
+  }
 
 export default function Hero() {
   return (
@@ -21,60 +52,118 @@ export default function Hero() {
           as={Box}
           textAlign={'center'}
           spacing={{ base: 8, md: 14 }}
-          py={{ base: 20, md: 36 }}>
+          py={{ base: 30, md: 36 }}>
+
           <Heading
             fontWeight={600}
             fontSize={{ base: '2xl', sm: '4xl', md: '6xl' }}
-            lineHeight={'110%'}>
-            Make money from <br />
-            <Text as={'span'} color={'green.400'}>
-              your audience
-            </Text>
+            lineHeight={'120%'}>
+            Bienvenue chez Alain Terrieur <br />
           </Heading>
           <Text color={'gray.500'}>
-            Monetize your content by charging your most loyal readers and reward them
-            loyalty points. Give back to your loyal readers by granting them access to
-            your pre-releases and sneak-peaks.
+          Votre Partenaire de Confiance pour les Travaux d'Intérieur Exceptionnels !<br/>
+          À  Alain Terrieur, nous sommes passionnés par la création d'espaces intérieurs qui allient fonctionnalité, 
+          élégance et confort. Que vous rêviez d'une cuisine moderne, d'une salle de bains luxueuse ou d'un salon chaleureux, 
+          notre équipe de professionnels qualifiés est là pour donner vie à votre vision.
+          </Text>
+          <Divider marginTop="5" />
+
+          <Container maxW={'5xl'} py={12}>
+      <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
+        <Stack spacing={4}>
+          <Heading>Une action à 360° sur votre rénovation d’intérieur</Heading>
+          <Text color={'gray.500'} fontSize={'lg'}>
+          Découvrez nos réalisations précédentes et laissez-vous inspirer par notre portfolio. Contactez-nous dès aujourd'hui pour discuter de votre projet de travaux d'intérieur. Chez Alain Terrieur, nous transformons les espaces sur plusieurs corps de métier pour coller au mieux à vos attentes.
           </Text>
           <Stack
-            direction={'column'}
-            spacing={3}
-            align={'center'}
-            alignSelf={'center'}
-            position={'relative'}>
-            <Button
-              colorScheme={'green'}
-              bg={'green.400'}
-              rounded={'full'}
-              px={6}
-              _hover={{
-                bg: 'green.500',
-              }}>
-              Get Started
-            </Button>
-            <Button variant={'link'} colorScheme={'blue'} size={'sm'}>
-              Learn more
-            </Button>
-            <Box>
-              <Icon
-                as={Arrow}
-                color={useColorModeValue('gray.800', 'gray.300')}
-                w={71}
-                position={'absolute'}
-                right={-71}
-                top={'10px'}
-              />
-              <Text
-                fontSize={'lg'}
-                fontFamily={'Caveat'}
-                position={'absolute'}
-                right={'-125px'}
-                top={'-15px'}
-                transform={'rotate(10deg)'}>
-                Starting at $15/mo
-              </Text>
-            </Box>
+            spacing={4}
+            divider={
+              <StackDivider borderColor={useColorModeValue('gray.100', 'gray.700')} />
+            }>
+            <Feature
+              icon={<Icon as={IoAnalyticsSharp} color={'yellow.500'} w={5} h={5} />}
+              iconBg={useColorModeValue('yellow.100', 'yellow.900')}
+              text={'Rénovation Intérieure Complète :'}
+            />
+            <Feature
+              icon={<Icon as={IoLogoBitcoin} color={'green.500'} w={5} h={5} />}
+              iconBg={useColorModeValue('green.100', 'green.900')}
+              text={'Revêtements de Sol et de Mur :'}
+            />
+            <Feature
+              icon={<Icon as={IoSearchSharp} color={'purple.500'} w={5} h={5} />}
+              iconBg={useColorModeValue('purple.100', 'purple.900')}
+              text={'Menuiseries Intérieures :'}
+            />
           </Stack>
+        </Stack>
+        <Flex>
+          <Image
+            rounded={'md'}
+            alt={'feature image'}
+            src={
+              'https://images.unsplash.com/photo-1554200876-56c2f25224fa?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'
+            }
+            objectFit={'cover'}
+          />
+        </Flex>
+      </SimpleGrid>
+    </Container>
+
+        <Wrap spacing="30px" marginTop="5">
+        <WrapItem width={{ base: '100%', sm: '45%', md: '45%', lg: '30%' }}>
+          <Box w="100%">
+            <Box borderRadius="lg" overflow="hidden">
+              <Box textDecoration="none" _hover={{ textDecoration: 'none' }}>
+                
+              </Box>
+            </Box>
+            <Heading fontSize="xl" marginTop="2">
+              <Text textDecoration="none" _hover={{ textDecoration: 'none' }}>
+              Approche Personnalisée :
+              </Text>
+            </Heading>
+            <Text as="p" fontSize="md" marginTop="2">
+            Nous comprenons que chaque projet est unique. Nous travaillons en étroite collaboration avec vous pour comprendre vos besoins et vos désirs, afin de créer un espace qui vous ressemble.
+            </Text>
+          </Box>
+        </WrapItem>
+        <WrapItem width={{ base: '100%', sm: '45%', md: '45%', lg: '30%' }}>
+          <Box w="100%">
+            <Box borderRadius="lg" overflow="hidden">
+              <Box textDecoration="none" _hover={{ textDecoration: 'none' }}>
+                
+              </Box>
+            </Box>
+            <Heading fontSize="xl" marginTop="2">
+              <Text textDecoration="none" _hover={{ textDecoration: 'none' }}>
+              Transparence et Honnêteté:
+              </Text>
+            </Heading>
+            <Text as="p" fontSize="md" marginTop="2">
+            Nous croyons en une communication ouverte et transparente à chaque étape du projet. Pas de surprises désagréables, seulement un service fiable et honnête.
+            </Text>
+          </Box>
+        </WrapItem>
+        <WrapItem width={{ base: '100%', sm: '45%', md: '45%', lg: '30%' }}>
+          <Box w="100%">
+            <Box borderRadius="lg" overflow="hidden">
+              <Box textDecoration="none" _hover={{ textDecoration: 'none' }}>
+                
+              </Box>
+            </Box>
+            <Heading fontSize="xl" marginTop="2">
+              <Text textDecoration="none" _hover={{ textDecoration: 'none' }}>
+              Délais Respectés :
+              </Text>
+            </Heading>
+            <Text as="p" fontSize="md" marginTop="2">
+            Nous comprenons l'importance de votre temps. Nous nous engageons à respecter les délais convenus et à livrer votre projet à temps.
+            </Text>
+          </Box>
+        </WrapItem>
+      </Wrap>
+
         </Stack>
       </Container>
     </>
