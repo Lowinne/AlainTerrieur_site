@@ -38,3 +38,12 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+#TRELLO
+
+https://trello.com/invite/b/s9K5S1uJ/ATTI8fbad67a4409e5302f35732ed9ea5b6d1480E8EB/alain-terrieur
+
+## NOM DES ELEVES 
+
+Pierre-Antoine LARGE
+Boris PRINCE
